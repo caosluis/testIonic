@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="cargarNoticias()">
+            <ion-spinner name="dots" *ngIf="loading"></ion-spinner>
+            <span *ngIf="loading==false">GET</span>
+          </ion-button>
+          <ion-list>
+            <ion-item *ngFor="let element of noticias.articles">
+
+              <ion-card>
+                <ion-card-content>
+                  <img src="{{element.urlToImage}}" alt="">
+                  <ion-card-title>{{element.name}}</ion-card-title>
+                  <ion-label>
+                    Author: {{element.author}}
+                  </ion-label>
+                  <p>
+                    Title: {{element.title}}
+                  </p>
+                  <p>
+                    Description: {{element.description}}
+                  </p>
+                </ion-card-content>
+              </ion-card>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="cargarNoticias2()">POST</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

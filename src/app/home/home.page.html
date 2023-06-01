@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,20 +14,8 @@
   </ion-header>
 
   <div id="container">
-
-
-
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-button (click)="cargarNoticias()">GET</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button (click)="cargarNoticias2()">POST</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-
+    <ion-button [routerLink]="['/news-list']">
+      Enter
+    </ion-button>
   </div>
 </ion-content>
